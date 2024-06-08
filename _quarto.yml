@@ -4,7 +4,9 @@ project:
     # Change port if it's busy in your system or just remove this line so that It will automatically use any free port
     port: 4200
     browser: true
-  pre-render: sh assets/scripts/changelog.sh
+  pre-render:
+    - sh assets/scripts/changelog.sh
+    - sh assets/scripts/versions.sh
 
 # These cannot be used as variables. They are reserved for the project configuration.
 website:
@@ -31,6 +33,74 @@ website:
         text: News
       - href: team/
         text: Team
+    right: 
+      - icon: file-earmark-diff
+        menu:
+          - text: Changelog
+            href: changelog.qmd
+          # The versions will be inserted here by the script
+
+          - text: v0.33.0
+            href: versions/v0.33.0/
+          - text: v0.32.3
+            href: versions/v0.32.3/
+          - text: v0.32.2
+            href: versions/v0.32.2/
+          - text: v0.32.1
+            href: versions/v0.32.1/
+          - text: v0.32.0
+            href: versions/v0.32.0/
+          - text: v0.31.5
+            href: versions/v0.31.5/
+          - text: v0.31.4
+            href: versions/v0.31.4/
+          - text: v0.31.3
+            href: versions/v0.31.3/
+          - text: v0.31.2
+            href: versions/v0.31.2/
+          - text: v0.31.1
+            href: versions/v0.31.1/
+          - text: v0.31.0
+            href: versions/v0.31.0/
+          - text: v0.30.9
+            href: versions/v0.30.9/
+          - text: v0.30.8
+            href: versions/v0.30.8/
+          - text: v0.30.7
+            href: versions/v0.30.7/
+          - text: v0.30.6
+            href: versions/v0.30.6/
+          - text: v0.30.5
+            href: versions/v0.30.5/
+          - text: v0.30.4
+            href: versions/v0.30.4/
+          - text: v0.30.3
+            href: versions/v0.30.3/
+          - text: v0.30.2
+            href: versions/v0.30.2/
+          - text: v0.30.1
+            href: versions/v0.30.1/
+          - text: v0.30.0
+            href: versions/v0.30.0/
+          - text: v0.29.3
+            href: versions/v0.29.3/
+          - text: v0.29.2
+            href: versions/v0.29.2/
+          - text: v0.29.1
+            href: versions/v0.29.1/
+          - text: v0.29.0
+            href: versions/v0.29.0/
+          - text: v0.28.3
+            href: versions/v0.28.3/
+          - text: v0.28.2
+            href: versions/v0.28.2/
+          - text: v0.28.1
+            href: versions/v0.28.1/
+          - text: v0.28.0
+            href: versions/v0.28.0/
+          - text: v0.27.1
+            href: versions/v0.27.1/
+          # The versions list ends here
     tools:
       - icon: twitter
         href: https://x.com/TuringLang
@@ -38,8 +108,6 @@ website:
       - icon: github
         href: https://github.com/TuringLang/Turing.jl
         text: Turing GitHub
-      - icon: file-earmark-diff
-        href: changelog.qmd
   
   page-footer:
     background: "#073c44"
