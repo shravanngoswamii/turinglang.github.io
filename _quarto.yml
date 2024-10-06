@@ -16,7 +16,6 @@ website:
     type: overlay
   navbar:
     logo: "assets/images/turing-logo.svg"
-    logo-href: https://turinglang.org/
     background: "#073c44"
     foreground: "#ffffff"
     left:
@@ -38,24 +37,24 @@ website:
         text: Turing GitHub
         href: https://github.com/TuringLang/Turing.jl
   
-  page-footer:
-    background: "#073c44"
-    left: |
-      Turing is created by <a href="http://mlg.eng.cam.ac.uk/hong/" target="_blank">Hong Ge</a>, and lovingly maintained by the <a href="https://github.com/TuringLang/Turing.jl/graphs/contributors" target="_blank">core team</a> of volunteers. <br>
-      The contents of this website are © 2024 under the terms of the <a href="https://github.com/TuringLang/Turing.jl/blob/master/LICENCE" target="_blank">MIT License</a>. 
+  # page-footer:
+  #   background: "#073c44"
+  #   left: |
+  #     Turing is created by <a href="http://mlg.eng.cam.ac.uk/hong/" target="_blank">Hong Ge</a>, and lovingly maintained by the <a href="https://github.com/TuringLang/Turing.jl/graphs/contributors" target="_blank">core team</a> of volunteers. <br>
+  #     The contents of this website are © 2024 under the terms of the <a href="https://github.com/TuringLang/Turing.jl/blob/master/LICENCE" target="_blank">MIT License</a>. 
 
-    right:
-      - icon: twitter
-        href: https://x.com/TuringLang
-        aria-label: Turing Twitter
-      - icon: github
-        href: https://github.com/TuringLang/Turing.jl
-        aria-label: Turing GitHub
+  #   right:
+  #     - icon: twitter
+  #       href: https://x.com/TuringLang
+  #       aria-label: Turing Twitter
+  #     - icon: github
+  #       href: https://github.com/TuringLang/Turing.jl
+  #       aria-label: Turing GitHub
+  #     - icon: discourse
+  #       href: https://github.com/TuringLang/Turing.jl
 
   back-to-top-navigation: true
   repo-url: https://github.com/TuringLang/turinglang.github.io/
-  repo-actions: [edit, issue]
-  repo-link-target: _blank
   page-navigation: true
 
 format:
@@ -64,10 +63,19 @@ format:
       light: cosmo
       dark: [cosmo, theming/theme-dark.scss]
     css: theming/styles.css
-    toc: true
+    toc: false
+    sidebar: false
     smooth-scroll: true
     code-overflow: wrap
     output-block-background: true
+    include-after-body:
+      text: |
+        <footer id="footer">
+          <style>#footer p{text-align: center !important;}</style>
+          <p>Turing is created by <a href="http://mlg.eng.cam.ac.uk/hong/" target="_blank">Hong Ge</a>, and lovingly maintained by the <a href="https://github.com/TuringLang/Turing.jl/graphs/contributors" target="_blank">core team</a> of volunteers.</p>
+          <p>Follow us on <a href="https://x.com/TuringLang" class="twitter-link"><span class="footer-icon footer-twitter-icon"></span>@TuringLang</a> and check out our GitHub <a href="https://github.com/TuringLang/" class="github-link"><span class="footer-icon footer-github-icon"></span>TuringLang</a>.</p>
+          <p>&copy; 2024 under the terms of the <a href="https://github.com/TuringLang/Turing.jl/blob/master/LICENCE" target="_blank">MIT License</a>.</p>
+        </footer>
 
 # Global Variables to use in any qmd files using:
 # {{< meta site-url >}}
