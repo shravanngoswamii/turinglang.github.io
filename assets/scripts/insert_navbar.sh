@@ -78,12 +78,14 @@ find "$HTML_DIR" -name "*.html" | while read file; do
     file_contents=$(cat "$file")
 
     # Insert the navbar HTML after the <body> tag
-    updated_contents="${file_contents/<body>/<body>
-$NAVBAR_HTML
-}"
-
-    # Write the updated contents back to the file
-    echo "$updated_contents" > "$file"
+    awk -v nav="$NAVBAR_HTML" '
+    /<body>/ {
+        print $0
+        print nav
+        next
+    }
+    { print }
+    ' "$file" > temp && mv temp "$file"
 
     # Remove trailing blank lines immediately after the navbar
     awk 'BEGIN {RS=""; ORS="\n\n"} {gsub(/\n+$/, ""); print}' "$file" > temp_cleaned && mv temp_cleaned "$file"
